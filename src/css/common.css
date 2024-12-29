@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Montserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Стилі для самого інпуту (ви вже додали ці стилі) */
+input.flatpickr-input.flatpickr-mobile {
+  width: 272px;
+  height: 40px;
+  position: absolute;
+  top: 36px;
+  left: 156px;
+  background-color: #f5f5f5;
+  border: 1px solid #808080;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px; /* Можна додати округлені кути */
+}
+
+/* Стилі для вибору часу (якщо включено) */
+.flatpickr-time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.flatpickr-time input {
+  width: 50px;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #808080;
+  border-radius: 4px;
+}
+
+.flatpickr-time input:focus {
+  border-color: #007bff; /* Колір бордеру при фокусі */
+}
+
+/* Стилі для кнопки підтвердження (якщо є) */
+.flatpickr-confirm-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.flatpickr-confirm-button:hover {
+  background-color: #0056b3; /* Колір фону при наведенні */
+}
+
+/* Стилі для кнопки */
+button[data-start] {
+  width: 75px;
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: absolute;
+  top: 36px; /* Вирівнювання по вертикалі з інпутом */
+  left: calc(156px + 272px + 8px); /* Відстань 8 пікселів правіше від інпуту */
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #cfcfcf; /* Сірий фон для кнопки */
+  color: #989898; /* Текст в сірому для кнопки */
+  border: none;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* Стиль для нормального стану (normal) */
+button[data-start]:not([disabled]) {
+  background-color: #4e75ff; /* Фон для нормального стану */
+  color: #ffffff; /* Білий текст */
+}
+
+/* Стиль для кнопки в стані hover */
+button[data-start]:not([disabled]):hover {
+  background-color: #6c8cff; /* Світліший відтінок синього при hover */
+  color: #ffffff; /* Білий текст */
+}
+
+/* Стиль для кнопки в стані disabled */
+button[data-start]:disabled {
+  background-color: #cfcfcf; /* Сірий фон для disabled */
+  color: #989898; /* Текст сірого кольору для disabled */
+  cursor: not-allowed; /* Курсор при disabled */
+}
+
+/* Стилі для таймера */
+.timer {
+  width: 346px; /* Ширина елемента */
+  height: 72px; /* Висота елемента */
+  display: flex;
+  justify-content: space-between; /* Відстань між елементами всередині */
+  gap: 24px; /* Відстань між елементами всередині контейнера */
+  position: absolute; /* Абсолютне позиціонування */
+  top: 108px; /* Відстань від верхнього краю */
+  left: 156px; /* Відстань від лівого краю */
+}
+
+.field {
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field:nth-child(1) {
+  width: 55px;
+}
+
+.field:nth-child(2) {
+  width: 61px;
+}
+
+.field:nth-child(3) {
+  width: 76px;
+}
+
+.field:nth-child(4) {
+  width: 82px;
+}
+
+.value {
+  height: 48px;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: 48px;
+  font-size: 40px;
+  text-align: center;
+  color: #2e2f42;
+}
+
+.field:nth-child(1) .value {
+  width: 55px;
+}
+
+.field:nth-child(2) .value {
+  width: 47px;
+}
+
+.field:nth-child(3) .value {
+  width: 49px;
+}
+
+.field:nth-child(4) .value {
+  width: 55px;
+}
+
+.label {
+  height: 24px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #2e2f42;
+}
+
+.field:nth-child(1) .label {
+  width: 44px;
+}
+
+.field:nth-child(2) .label {
+  width: 61px;
+}
+
+.field:nth-child(3) .label {
+  width: 76px;
+}
+
+.field:nth-child(4) .label {
+  width: 82px;
+}
