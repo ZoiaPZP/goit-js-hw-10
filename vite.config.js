@@ -6,6 +6,7 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
   return {
+    base: '/vanilla-app-template/',  
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
@@ -46,3 +47,4 @@ export default defineConfig(({ command }) => {
     ],
   };
 });
+
