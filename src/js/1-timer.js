@@ -4,7 +4,6 @@ import '../css/common.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-// Для використання англійської локалізації, flatpickr за замовчуванням використовує англійську.
 const inputEl = document.querySelector('#datetime-picker');
 const buttonEl = document.querySelector('button[data-start]');
 const daysEl = document.querySelector('.value[data-days]');
@@ -22,7 +21,8 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  locale: 'en',  // Вказуємо англійську локалізацію без імпорту файлів
+  locale: 'en',  
+  disableMobile: true,  
   onClose(selectedDates) {
     if (!selectedDates || selectedDates.length === 0) {
       iziToast.error({
@@ -34,7 +34,7 @@ const options = {
       return;
     }
 
-    const selectedDateTime = selectedDates[0]; 
+    const selectedDateTime = selectedDates[0];
 
     if (selectedDateTime < Date.now()) {
       iziToast.error({
@@ -42,15 +42,15 @@ const options = {
         message: 'Please choose a date in the future',
         position: 'topRight',
       });
-      buttonEl.disabled = true; 
+      buttonEl.disabled = true;
     } else {
       iziToast.success({
         title: 'Success',
         message: 'You have selected a valid date!',
         position: 'topRight',
       });
-      selectedDate = selectedDateTime; 
-      buttonEl.disabled = false; 
+      selectedDate = selectedDateTime;
+      buttonEl.disabled = false;
     }
   },
 };
@@ -80,14 +80,14 @@ function updateTimer() {
 
   if (remainingTime <= 0) {
     clearInterval(intervalId);
-    buttonEl.disabled = true; 
-    inputEl.disabled = false; 
+    buttonEl.disabled = true;
+    inputEl.disabled = false;
     iziToast.success({
       title: 'Timer finished!',
       message: 'The countdown has ended.',
       position: 'topRight',
     });
-    
+
     daysEl.textContent = '00';
     hoursEl.textContent = '00';
     minutesEl.textContent = '00';
@@ -104,7 +104,7 @@ function updateTimer() {
 buttonEl.addEventListener('click', () => {
   buttonEl.disabled = true;
   inputEl.disabled = true;
-  intervalId = setInterval(updateTimer, 1000); 
+  intervalId = setInterval(updateTimer, 1000);
 });
 
 
